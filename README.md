@@ -10,6 +10,34 @@ se muevan de manera que respeten la precedencia correcta.
 Para resumir, lo que buscaremos es que el programa analice la expresión en notación infija que el usuario le dé paso por paso cumpliendo la prioridad de los operadores y el uso de paréntesis pasando de infijas a postfijas.
 
 ---
+## **Necesidad de la traducción**
+
+La principal razón por qué se necesita la traducción del algoritmo Shunting-Yard es porque las computadoras no son capaces de interpretar por sí mismas las expresiones que utilizamos generalmente los humanos. Nosotros escribimos en notación infija. 
+
+Por ejemplo:	3 + 4 * (2 - 1)
+
+La notación infija requiere de reglas de precedencia como que la multiplicación se hace antes que la suma o que los paréntesis alteran el orden, llegando a ser ambiguas para las computadoras debido a que estas reglas no vienen “incluidas” en la expresión matemática, por lo tanto la computadora tendría que interpretarlas cada vez. Además que las traducciones directas desde infijo a código ejecutable son difíciles de realizar por los lenguajes de programación lo que llega a ser ineficiente y vulnerable a errores.
+
+---
+## **El rol del algoritmo Shunting-Yard como un Autómata de Pila**
+
+El funcionamiento del algoritmo Shunting-Yard se relaciona adecuadamente con las características de un autómata de pila debido a las siguientes causas:
+
+- **Lee una expresión infija símbolo por símbolo**:
+  Cada token (número, operador o paréntesis) se procesa uno seguido del otro semejante a un autómata de pila que procesa una cadena.
+
+- **Utiliza una pila para controlar la estructura** :
+  Se guardan en una pila los operadores y paréntesis. Es decir, se almacena información necesaria acerca de la estructura del lenguaje similar a lo que hace un autómata de pila.
+
+- **Responde de acuerdo el símbolo actual + el tope de la pila**:
+  Sigue ciertas reglas de acuerdo al operador que se encuentra en el tope de la pila y el símbolo actual.
+
+- **La salida se obtiene mientras se utiliza la pila**:
+  Puede generar cadenas (autómata de pila con salida) como un AP.
+
+
+
+---
 ## **Plan del proyecto**
 
 Seguiremos los siguientes pasos para desarrollar el proyecto:
@@ -31,5 +59,3 @@ Seguiremos los siguientes pasos para desarrollar el proyecto:
   Detectar expresiones incorrectas, como paréntesis sin cerrar.  
 * Preparar el informe final:  
   Explicar cómo funciona el programa, cómo se usa y el código.  
-
-## **Ejecución**
